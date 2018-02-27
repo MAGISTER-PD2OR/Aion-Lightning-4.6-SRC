@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<npc_walker xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaation="npcwalker.xsd">
+    <!-- how to get correct route id 300280000 + id for example if id = 26-> 30028000026 -->
+    <!-- Cloister_of_Kaisinel -->
+	<walker_template route_id="11002000001" pool="1">
+		<!-- NpcID: 799899 -->
+			<routestep step="1" x="2165.9014" y="1606.1564" z="1212.0769" rest_time="0"/>
+			<routestep step="2" x="2167.585" y="1613.8917" z="1212.0771" rest_time="0"/>
+			<routestep step="3" x="2167.2644" y="1612.3689" z="1212.0771" rest_time="0"/>
+			<routestep step="4" x="2165.9014" y="1606.1564" z="1212.0769" rest_time="0"/>
+			<routestep step="5" x="2167.585" y="1613.8917" z="1212.0771" rest_time="0"/>
+			<routestep step="6" x="2167.2644" y="1612.3689" z="1212.0771" rest_time="0"/>
+	</walker_template>				    
+</npc_walker>

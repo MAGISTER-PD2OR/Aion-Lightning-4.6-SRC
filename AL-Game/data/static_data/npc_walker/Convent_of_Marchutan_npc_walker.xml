@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<npc_walker xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaation="npcwalker.xsd">
+    <!-- how to get correct route id 300280000 + id for example if id = 26-> 30028000026 -->
+    <!-- Convent_of_Marchutan -->
+	<walker_template route_id="12002000001" pool="1">
+		<!-- NpcID: 799916 -->
+			<routestep step="1" x="1552.6475" y="1438.5018" z="264.75586" rest_time="0"/>
+			<routestep step="2" x="1555.75" y="1436.25" z="264.73" rest_time="0"/>
+			<routestep step="3" x="1556.494" y="1436.0308" z="264.73465" rest_time="0"/>
+			<routestep step="4" x="1555.1821" y="1435.989" z="264.73773" rest_time="0"/>
+			<routestep step="5" x="1553.6589" y="1435.8104" z="264.7407" rest_time="0"/>
+			<routestep step="6" x="1542.2922" y="1435.0393" z="264.76547" rest_time="0"/>
+			<routestep step="7" x="1552.6475" y="1438.5018" z="264.75586" rest_time="0"/>
+			<routestep step="8" x="1555.75" y="1436.25" z="264.73" rest_time="0"/>
+			<routestep step="9" x="1556.494" y="1436.0308" z="264.73465" rest_time="0"/>
+			<routestep step="10" x="1555.1821" y="1435.989" z="264.73773" rest_time="0"/>
+			<routestep step="11" x="1553.6589" y="1435.8104" z="264.7407" rest_time="0"/>
+	</walker_template>				    
+</npc_walker>

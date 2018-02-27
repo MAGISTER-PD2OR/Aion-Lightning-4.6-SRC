@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
+    <!--
+            [BEGIN] SUMMARY
+                    80324 [XML] Prescription for Medicine (Elyos)
+                    80325 [XML] Prescription for Psychiatric Medicine (Elyos)
+                    80326 [XML] Prescription for Medicine (Asmodians) 
+                    80327 [XML] Prescription for Psychiatric Medicine (Asmodians) 
+                    80575 [XML] [Event] Snowy Wonderland (Elyos)
+                    80578 [XML] [Event] A Winter Wonderland (Asmodians) 
+            [END] SUMMARY
+    -->
+    <!-- REPORTING QUESTS -->
+    <report_to id="50000" start_npc_ids="799707" end_npc_ids="799705" />
+    <report_to id="50001" start_npc_ids="799706" end_npc_ids="799705"/>
+    <report_to id="51000" start_npc_ids="799795" end_npc_ids="799793"/>
+    <report_to id="51001" start_npc_ids="799794" end_npc_ids="799793"/>
+    <report_to id="80324" start_npc_ids="831434" end_npc_ids="831447"/>
+    <report_to id="80325" start_npc_ids="831433" end_npc_ids="831447"/>
+    <report_to id="80326" start_npc_ids="831440" end_npc_ids="831448"/>
+    <report_to id="80327" start_npc_ids="831439" end_npc_ids="831448"/>
+    <report_to id="80575" start_npc_ids="832041" end_npc_ids="832041"/>
+    <report_to id="80578" start_npc_ids="832041" end_npc_ids="832041"/>
+    <report_to_many id="80467" start_npc_ids="831859" end_npc_ids="831859">
+        <npc_infos var="0" npc_id="831859" quest_dialog="2375" close_dialog="1009"/>
+    </report_to_many>
+    <report_to_many id="80468" start_npc_ids="831860" end_npc_ids="831860">
+        <npc_infos var="0" npc_id="831860" quest_dialog="2375" close_dialog="1009"/>
+    </report_to_many>
+    <report_to_many id="80469" start_npc_ids="831861" end_npc_ids="831861">
+        <npc_infos var="0" npc_id="831861" quest_dialog="2375" close_dialog="1009"/>
+    </report_to_many>
+    <report_to_many id="80470" start_npc_ids="831862" end_npc_ids="831862">
+        <npc_infos var="0" npc_id="831862" quest_dialog="2375" close_dialog="1009"/>
+    </report_to_many>
+    <!-- COLLECTING QUESTS -->
+    <item_collecting start_npc_ids="202549" id="50010"/>
+    <item_collecting start_npc_ids="202549" id="50019"/>
+    <item_collecting start_npc_ids="202549" id="50020"/>
+    <item_collecting start_npc_ids="202549" id="50022"/>
+    <item_collecting start_npc_ids="831071" id="50023"/>
+    <item_collecting start_npc_ids="701471" id="50024"/>
+    <item_collecting start_npc_ids="701471" id="50025"/>
+    <item_collecting start_npc_ids="701471" id="50026"/>
+    <item_collecting start_npc_ids="831080" id="50027"/>
+    <item_collecting start_npc_ids="831090" id="50028"/>
+    <item_collecting start_npc_ids="831090" id="50029"/>
+    <item_collecting start_npc_ids="831090" id="50030"/>
+    <item_collecting start_npc_ids="000000" id="50032"/> <!-- TODO -->
+    <item_collecting start_npc_ids="000000" id="50033"/> <!-- TODO -->
+    <item_collecting start_npc_ids="202549" id="51010"/>
+    <item_collecting start_npc_ids="202549" id="51020"/>
+    <item_collecting start_npc_ids="202549" id="51022"/>
+    <item_collecting start_npc_ids="831072" id="51023"/>
+    <item_collecting start_npc_ids="701472" id="51024"/>
+    <item_collecting start_npc_ids="701472" id="51025"/>
+    <item_collecting start_npc_ids="831080" id="51026"/>
+    <item_collecting start_npc_ids="831092" id="51027"/>
+    <item_collecting start_npc_ids="831092" id="51028"/>
+    <item_collecting start_npc_ids="798301" id="51029"/>
+    <item_collecting start_npc_ids="831092" id="51030"/>
+    <item_collecting start_npc_ids="000000" id="51032"/> <!-- TODO -->
+    <item_collecting start_npc_ids="000000" id="51033"/> <!-- TODO -->
+    <item_collecting start_npc_ids="205481" id="80074"/>
+    <item_collecting start_npc_ids="205481" id="80075"/>
+    <item_collecting start_npc_ids="205474" id="80059"/>
+    <item_collecting start_npc_ids="799763" id="80172"/>
+    <item_collecting start_npc_ids="799763" id="80173"/>
+    <item_collecting start_npc_ids="799763" id="80174"/>
+    <item_collecting start_npc_ids="799763" id="80175"/>
+    <item_collecting start_npc_ids="799763" id="80176"/>
+    <item_collecting start_npc_ids="799763" id="80178"/>
+    <item_collecting start_npc_ids="799763" id="80179"/>
+    <item_collecting start_npc_ids="799763" id="80184"/>
+    <item_collecting start_npc_ids="799763" id="80185"/>
+    <item_collecting start_npc_ids="799763" id="80186"/>
+    <item_collecting start_npc_ids="799763" id="80187"/>
+    <item_collecting start_npc_ids="799763" id="80192"/>
+    <item_collecting start_npc_ids="799763" id="80193"/>
+    <item_collecting start_npc_ids="799763" id="80194"/>
+    <item_collecting start_npc_ids="799763" id="80195"/>
+    <item_collecting start_npc_ids="799763" id="80200"/>
+    <item_collecting start_npc_ids="799763" id="80201"/>
+    <item_collecting start_npc_ids="799763" id="80202"/>
+    <item_collecting start_npc_ids="799763" id="80203"/>
+    <item_collecting start_npc_ids="799763" id="80204"/>
+    <item_collecting start_npc_ids="799763" id="80205"/>
+    <item_collecting start_npc_ids="799763" id="80206"/>
+    <item_collecting start_npc_ids="799763" id="80207"/>
+    <item_collecting start_npc_ids="799763" id="80208"/>
+    <item_collecting start_npc_ids="799763" id="80209"/>
+    <item_collecting start_npc_ids="799763" id="80210"/>
+    <item_collecting start_npc_ids="799763" id="80211"/>
+    <item_collecting start_npc_ids="799763" id="80256"/>
+    <item_collecting start_npc_ids="799763" id="80257"/>
+    <item_collecting start_npc_ids="799763" id="80258"/>
+    <item_collecting start_npc_ids="799763" id="80259"/>
+    <item_collecting start_npc_ids="799763" id="80260"/>
+    <item_collecting start_npc_ids="799763" id="80261"/>
+    <item_collecting start_npc_ids="799763" id="80262"/>
+    <item_collecting start_npc_ids="799763" id="80263"/>
+    <item_collecting start_npc_ids="799763" id="80264"/>
+    <item_collecting start_npc_ids="799763" id="80265"/>
+    <item_collecting start_npc_ids="799763" id="80266"/>
+    <item_collecting start_npc_ids="799763" id="80267"/>
+    <item_collecting start_npc_ids="799763" id="80273"/>
+    <item_collecting start_npc_ids="831248" id="80284"/>
+    <item_collecting start_npc_ids="831249" id="80285"/>
+    <item_collecting start_npc_ids="799763" id="80298"/>
+    <item_collecting start_npc_ids="799763" id="80299"/>
+    <item_collecting start_npc_ids="799763" id="80300"/>
+    <item_collecting start_npc_ids="799763" id="80301"/>
+    <item_collecting start_npc_ids="799763" id="80302"/>
+    <item_collecting start_npc_ids="799763" id="80303"/>
+    <item_collecting start_npc_ids="799763" id="80304"/>
+    <item_collecting start_npc_ids="799763" id="80305"/>
+    <item_collecting start_npc_ids="799763" id="80306"/>
+    <item_collecting start_npc_ids="799763" id="80307"/>
+    <item_collecting start_npc_ids="799763" id="80308"/>
+    <item_collecting start_npc_ids="799763" id="80309"/>
+    <item_collecting start_npc_ids="799763" id="80312"/>
+    <item_collecting start_npc_ids="799763" id="80313"/>
+    <item_collecting start_npc_ids="799763" id="80314"/>
+    <item_collecting start_npc_ids="799763" id="80315"/>
+    <item_collecting start_npc_ids="799763" id="80316"/>
+    <item_collecting start_npc_ids="799763" id="80317"/>
+    <item_collecting start_npc_ids="799763" id="80318"/>
+    <item_collecting start_npc_ids="799763" id="80319"/>
+    <item_collecting start_npc_ids="799763" id="80320"/>
+    <item_collecting start_npc_ids="799763" id="80321"/>
+    <item_collecting start_npc_ids="799763" id="80322"/>
+    <item_collecting start_npc_ids="799763" id="80323"/>
+    <item_collecting start_npc_ids="799763" id="80328"/>
+    <item_collecting start_npc_ids="799763" id="80329"/>
+    <!-- HUNTING QUESTS -->
+    <monster_hunt start_npc_ids="202549" id="50021">
+        <monster var="0" npc_ids="217161" end_var="15"/>
+    </monster_hunt>
+    <monster_hunt start_npc_ids="202549" id="51019">
+        <monster var="0" npc_ids="217161" end_var="15"/>
+    </monster_hunt>
+    <monster_hunt start_npc_ids="202549" id="51021">
+        <monster var="0" npc_ids="217161" end_var="15"/>
+    </monster_hunt>
+    <!-- KILL IN WORLD QUESTS -->
+    <kill_in_world id="50031" start_npc_ids="831783" end_npc_ids="831783" worlds="0" amount="5"/> <!-- TODO -->
+    <kill_in_world id="51031" start_npc_ids="831784" end_npc_ids="831784" worlds="0" amount="5"/> <!-- TODO -->
+</quest_scripts>

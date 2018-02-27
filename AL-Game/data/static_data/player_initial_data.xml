@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player_initial_data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="player_initial_data.xsd">
+    <asmodian_spawn_location map_id="120010000" heading="65" x="1316.4557" y="1425.6559" z="209.09084"/>
+	<elyos_spawn_location map_id="110010000" heading="0" x="1443.6982" y="1574.4116" z="572.87537"/>
+	<player_data class="WARRIOR">
+		<items>
+			<item id="168310019" count="1"/>		
+			<item id="168310019" count="1"/>
+
+			<item id="110601295" count="1"/>
+			<item id="111601260" count="1"/>
+			<item id="112601240" count="1"/>
+			<item id="113601249" count="1"/>
+			<item id="114601244" count="1"/>
+			<item id="125002883" count="1"/>
+			
+			<item id="182400001" count="1000000"/>
+			<item id="123001433" count="1"/>
+			<item id="120001516" count="1"/>
+			<item id="120001516" count="1"/>
+			<item id="121001388" count="1"/>
+			<item id="122001661" count="1"/>
+			<item id="122001661" count="1"/>
+		
+			<item id="164002111" count="100"/>
+			<item id="164002112" count="100"/>
+			<item id="164002115" count="100"/>
+			
+			<item id="162000049" count="100"/>
+			<item id="162000023" count="100"/>
+			
+			<item id="190100011" count="1"/>
+			
+			<item id="100901104" count="1"/>
+			<item id="100901104" count="1"/>
+			
+			<item id="101301041" count="1"/>
+			<item id="101301041" count="1"/>
+			
+			<item id="100001411" count="1"/>
+			<item id="115001461" count="1"/>
+			
+			<item id="167000558" count="40"/>
+			<item id="167000554" count="40"/>
+			<item id="167000551" count="40"/>
+			<item id="167000555" count="40"/>
+			<item id="167000560" count="40"/>
+			<item id="167000553" count="40"/>
+			<item id="167000557" count="40"/>
+			<item id="167000518" count="40"/>
+			<item id="167000561" count="40"/>
+		</items>
+	</player_data>
+	<player_data class="MAGE">
+		<items>
+			<item id="168310019" count="1"/>		
+			<item id="168310019" count="1"/>
+
+			<item id="110101413" count="1"/>
+			<item id="111101290" count="1"/>
+			<item id="112101245" count="1"/>
+			<item id="113101307" count="1"/>
+			<item id="114101336" count="1"/>
+			<item id="125002880" count="1"/>
+	
+			<item id="182400001" count="1000000"/>
+			<item id="123001434" count="1"/>
+			<item id="120001517" count="1"/>
+			<item id="120001517" count="1"/>
+			<item id="121001389" count="1"/>
+			<item id="122001662" count="1"/>
+			<item id="122001662" count="1"/>
+			
+			<item id="164002111" count="100"/>
+			<item id="164002112" count="100"/>
+			<item id="164002115" count="100"/>
+			<item id="164002113" count="100"/>
+			
+			<item id="162000049" count="100"/>
+			<item id="162000023" count="100"/>
+			
+			<item id="190100011" count="1"/>
+			
+			<item id="100501096" count="1"/>
+			<item id="100501096" count="1"/>
+			
+			<item id="100601152" count="1"/>
+			<item id="100601152" count="1"/>
+			
+			<item id="167000558" count="40"/>
+			<item id="167000554" count="40"/>
+			<item id="167000551" count="40"/>
+			<item id="167000555" count="40"/>
+			<item id="167000560" count="40"/>
+			<item id="167000553" count="40"/>
+			<item id="167000557" count="40"/>
+			<item id="167000518" count="40"/>
+			<item id="167000561" count="40"/>
+		</items>
+	</player_data>
+	<player_data class="PRIEST">
+		<items>
+			<item id="168310019" count="1"/>		
+			<item id="168310019" count="1"/>
+
+	
+			<item id="110501318" count="1"/>
+			<item id="111501279" count="1"/>
+			<item id="112501222" count="1"/>
+			<item id="113501294" count="1"/>
+			<item id="114501300" count="1"/>
+			<item id="125002882" count="1"/>
+			<item id="182400001" count="1000000"/>
+			<item id="123001434" count="1"/>
+			<item id="120001517" count="1"/>
+			<item id="120001517" count="1"/>
+			<item id="121001389" count="1"/>
+			<item id="122001662" count="1"/>
+			<item id="122001662" count="1"/>
+			
+			<item id="164002111" count="100"/>
+			<item id="164002112" count="100"/>
+			<item id="164002115" count="100"/>
+			<item id="164002113" count="100"/>
+			
+			<item id="162000049" count="100"/>
+			<item id="162000023" count="100"/>
+			
+			<item id="190100011" count="1"/>
+			
+			<item id="115001461" count="1"/>
+			<item id="100101088" count="1"/>
+
+			<item id="101501122" count="1"/>
+			<item id="101501122" count="1"/>
+			
+			<item id="167000558" count="40"/>
+			<item id="167000554" count="40"/>
+			<item id="167000551" count="40"/>
+			<item id="167000555" count="40"/>
+			<item id="167000560" count="40"/>
+			<item id="167000553" count="40"/>
+			<item id="167000557" count="40"/>
+			<item id="167000518" count="40"/>
+			<item id="167000561" count="40"/>
+		</items>
+	</player_data>
+	<player_data class="SCOUT">
+		<items>
+			<item id="168310019" count="1"/>		
+			<item id="168310019" count="1"/>
+
+			<item id="110301340" count="1"/>
+			<item id="111301285" count="1"/>
+			<item id="112301229" count="1"/>
+			<item id="113301309" count="1"/>
+			<item id="114301342" count="1"/>
+			<item id="125003574" count="1"/>
+			<item id="182400001" count="1000000"/>
+			<item id="123001433" count="1"/>
+			<item id="120001516" count="1"/>
+			<item id="120001516" count="1"/>
+			<item id="121001388" count="1"/>
+			<item id="122001661" count="1"/>
+			<item id="122001661" count="1"/>
+			
+			<item id="164002111" count="100"/>
+			<item id="164002112" count="100"/>
+			<item id="164002115" count="100"/>
+			<item id="164002113" count="100"/>
+			
+			<item id="162000049" count="100"/>
+			<item id="162000023" count="100"/>
+			<item id="190100011" count="1"/>
+			
+			<item id="100201250" count="1"/>
+			<item id="100201250" count="1"/>
+
+			<item id="100001411" count="1"/>
+			<item id="100001411" count="1"/>
+			
+			<item id="101701133" count="1"/>
+			<item id="101701133" count="1"/>
+			
+			<item id="167000558" count="40"/>
+			<item id="167000554" count="40"/>
+			<item id="167000551" count="40"/>
+			<item id="167000555" count="40"/>
+			<item id="167000560" count="40"/>
+			<item id="167000553" count="40"/>
+			<item id="167000557" count="40"/>
+			<item id="167000518" count="40"/>
+			<item id="167000561" count="40"/>
+		</items>
+	</player_data>
+	<player_data class="ENGINEER">
+		<items>
+			<item id="168310019" count="1"/>		
+			<item id="168310019" count="1"/>
+
+			<item id="110301605" count="1"/>
+			<item id="111301543" count="1"/>
+			<item id="112301484" count="1"/>
+			<item id="113301571" count="1"/>
+			<item id="114301609" count="1"/>
+			<item id="125003574" count="1"/>
+			
+			<item id="110501255" count="1"/>
+			<item id="111501214" count="1"/>
+			<item id="112501159" count="1"/>
+			<item id="113501231" count="1"/>
+			<item id="114501235" count="1"/>
+			<item id="125002882" count="1"/>
+			
+			<item id="182400001" count="1000000"/>
+			<item id="123001434" count="1"/>
+			<item id="120001517" count="1"/>
+			<item id="120001517" count="1"/>
+			<item id="121001389" count="1"/>
+			<item id="122001662" count="1"/>
+			<item id="122001662" count="1"/>
+			
+			<item id="164002111" count="100"/>
+			<item id="164002112" count="100"/>
+			<item id="164002115" count="100"/>
+			
+			<item id="162000049" count="100"/>
+			<item id="162000023" count="100"/>
+			
+			<item id="190100011" count="1"/>
+			
+			<item id="101801057" count="1"/>
+			<item id="101801057" count="1"/>
+
+			<item id="101901007" count="1"/>
+			<item id="101901007" count="1"/>
+			
+			<item id="102100703" count="1"/>
+			<item id="102100703" count="1"/>
+			
+			<item id="167000558" count="40"/>
+			<item id="167000554" count="40"/>
+			<item id="167000551" count="40"/>
+			<item id="167000555" count="40"/>
+			<item id="167000560" count="40"/>
+			<item id="167000553" count="40"/>
+			<item id="167000557" count="40"/>
+			<item id="167000518" count="40"/>
+			<item id="167000561" count="40"/>
+		</items>
+	</player_data>
+	<player_data class="ARTIST">
+		<items>
+			<item id="168310019" count="1"/>		
+			<item id="168310019" count="1"/>
+
+			<item id="110101413" count="1"/>
+			<item id="111101290" count="1"/>
+			<item id="112101245" count="1"/>
+			<item id="113101307" count="1"/>
+			<item id="114101336" count="1"/>
+			<item id="125004104" count="1"/>
+			<item id="182400001" count="1000000"/>
+			<item id="123001434" count="1"/>
+			<item id="120001517" count="1"/>
+			<item id="120001517" count="1"/>
+			<item id="121001389" count="1"/>
+			<item id="122001662" count="1"/>
+			<item id="122001662" count="1"/>
+			<item id="164002111" count="100"/>
+			<item id="164002112" count="100"/>
+			<item id="164002115" count="100"/>
+			<item id="164002113" count="100"/>
+			
+			<item id="162000049" count="100"/>
+			<item id="162000023" count="100"/>
+			
+			<item id="190100011" count="1"/>
+			
+			<item id="102001081" count="1"/>
+			<item id="102001081" count="1"/>
+			
+			<item id="167000558" count="40"/>
+			<item id="167000554" count="40"/>
+			<item id="167000551" count="40"/>
+			<item id="167000555" count="40"/>
+			<item id="167000560" count="40"/>
+			<item id="167000553" count="40"/>
+			<item id="167000557" count="40"/>
+			<item id="167000518" count="40"/>
+			<item id="167000561" count="40"/>
+		</items>
+	</player_data>
+</player_initial_data>

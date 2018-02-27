@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crazy_daeva_schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="crazy_daeva_schedule.xsd">
+    <schedule id="1">
+        <scheduleTime>0 0 1 ? * *</scheduleTime>
+        <scheduleTime>0 0 2 ? * *</scheduleTime>
+        <scheduleTime>0 0 3 ? * *</scheduleTime>
+        <scheduleTime>0 0 4 ? * *</scheduleTime>
+        <scheduleTime>0 0 5 ? * *</scheduleTime>
+        <scheduleTime>0 0 6 ? * *</scheduleTime>
+        <scheduleTime>0 0 7 ? * *</scheduleTime>
+        <scheduleTime>0 0 8 ? * *</scheduleTime>
+        <scheduleTime>0 0 9 ? * *</scheduleTime>
+        <scheduleTime>0 0 10 ? * *</scheduleTime>
+        <scheduleTime>0 0 11 ? * *</scheduleTime>
+        <scheduleTime>0 0 12 ? * *</scheduleTime>
+        <scheduleTime>0 0 13 ? * *</scheduleTime>
+        <scheduleTime>0 0 14 ? * *</scheduleTime>
+        <scheduleTime>0 0 15 ? * *</scheduleTime>
+        <scheduleTime>0 0 16 ? * *</scheduleTime>
+        <scheduleTime>0 0 17 ? * *</scheduleTime>
+        <scheduleTime>0 0 18 ? * *</scheduleTime>
+        <scheduleTime>0 0 19 ? * *</scheduleTime>
+        <scheduleTime>0 0 20 ? * *</scheduleTime>
+        <scheduleTime>0 0 21 ? * *</scheduleTime>
+        <scheduleTime>0 0 22 ? * *</scheduleTime>
+        <scheduleTime>0 0 23 ? * *</scheduleTime>
+        <scheduleTime>0 0 0 ? * *</scheduleTime>
+    </schedule>
+</crazy_daeva_schedule>

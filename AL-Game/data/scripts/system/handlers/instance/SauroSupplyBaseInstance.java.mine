@@ -1,0 +1,366 @@
+/**
+ * This file is part of Aion-Lightning <aion-lightning.org>.
+ *
+ *  Aion-Lightning is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  Aion-Lightning is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details. *
+ *  You should have received a copy of the GNU General Public License
+ *  along with Aion-Lightning.
+ *  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+package instance;
+
+import com.aionemu.commons.utils.Rnd;
+import com.aionemu.commons.network.util.ThreadPoolManager;
+import com.aionemu.gameserver.instance.handlers.GeneralInstanceHandler;
+import com.aionemu.gameserver.instance.handlers.InstanceID;
+import com.aionemu.gameserver.model.EmotionType;
+import com.aionemu.gameserver.model.drop.DropItem;
+import com.aionemu.gameserver.model.gameobjects.Npc;
+import com.aionemu.gameserver.model.gameobjects.Creature;
+import com.aionemu.gameserver.model.gameobjects.StaticDoor;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_DIE;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_EMOTION;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_QUEST_ACTION;
+import com.aionemu.gameserver.services.teleport.TeleportService2;
+import com.aionemu.gameserver.services.drop.DropRegistrationService;
+import com.aionemu.gameserver.skillengine.SkillEngine;
+import com.aionemu.gameserver.utils.PacketSendUtility;
+import com.aionemu.gameserver.world.WorldMapInstance;
+import com.aionemu.gameserver.world.zone.ZoneInstance;
+import com.aionemu.gameserver.world.zone.ZoneName;
+import com.aionemu.gameserver.world.knownlist.Visitor;
+
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * @author Eloann
+ */
+@InstanceID(301130000)
+public class SauroSupplyBaseInstance extends GeneralInstanceHandler {
+
+    Npc bossHistorianUterunerk = null;
+    Npc bossBrigadeGeneralSheba = null;
+    Npc bossGuardCaptainAhuradim = null;
+    Npc bossMedicalOfficerSurkihan = null;
+    Npc bossInterrogatingOfficerJadaraka = null;
+    @SuppressWarnings("unused")
+    private boolean isInstanceDestroyed;
+    private boolean isStartTimer1 = false;
+    private boolean isStartTimer2 = false;
+    private boolean isStartTimer3 = false;
+    private boolean isStartTimer4 = false;
+    private boolean isStartTimer5 = false;
+    private Map<Integer, StaticDoor> doors;
+
+    /**
+     * Bonus Monster: He can appear in "5 different rooms" and give ancient
+     * coins, ancient manastones, and skins.
+     *
+     * @param instance
+     */
+    @Override
+    public void onInstanceCreate(WorldMapInstance instance) {
+        super.onInstanceCreate(instance);
+        doors = instance.getDoors();
+        int rnd = Rnd.get(1, 5);
+        switch (rnd) {
+            case 1:
+                spawn(230846, 464.07788f, 401.3575f, 182.15321f, (byte) 10);
+                break;
+            case 2:
+                spawn(230846, 496.30792f, 412.814f, 182.13792f, (byte) 73);
+                break;
+            case 3:
+                spawn(230846, 497.15717f, 392.34656f, 182.14955f, (byte) 75);
+                break;
+            case 4:
+                spawn(230846, 496.2902f, 358.0765f, 182.14955f, (byte) 48);
+                break;
+            case 5:
+                spawn(230846, 464.15985f, 389.7157f, 182.15321f, (byte) 109);
+                break;
+        }
+    }
+
+    @Override
+    public void onDropRegistered(Npc npc) {
+        Set<DropItem> dropItems = DropRegistrationService.getInstance().getCurrentDropMap().get(npc.getObjectId());
+        int npcId = npc.getNpcId();
+        switch (npcId) {
+            case 230847: //Secret Key Box.
+                dropItems.add(DropRegistrationService.getInstance().regDropItem(1, 0, npcId, 185000179, 1)); //Danuar Stone Room Key.
+                break;
+            case 230852: //Commander Ranodim.
+                switch (Rnd.get(1, 3)) {
+                    case 1:
+                        dropItems.add(DropRegistrationService.getInstance().regDropItem(1, 0, npcId, 185000176, 1)); //Red Storeroom Key.
+                        break;
+                    case 2:
+                        dropItems.add(DropRegistrationService.getInstance().regDropItem(1, 0, npcId, 185000177, 1)); //Blue Storeroom Key.
+                        break;
+                    case 3:
+                        dropItems.add(DropRegistrationService.getInstance().regDropItem(1, 0, npcId, 185000178, 1)); //Green Storeroom Key.
+                        break;
+                }
+                break;
+        }
+    }
+
+    @Override
+    public void onDie(Npc npc) {
+        Player player = npc.getAggroList().getMostPlayerDamage();
+        int npcId = npc.getNpcId();
+
+        switch (npcId) {
+            /**
+             * Area 1: Guardroom And Rune Hall.
+             */
+            case 230849: //Guard Captain Rohuka.
+                sendMsg(1401914);
+                doors.get(383).setOpen(true);
+                break;
+            case 230851: //Chief Gunner Kurmata.
+                sendMsg(1401915);
+                doors.get(59).setOpen(true);
+                doors.get(382).setOpen(true);
+                doors.get(387).setOpen(true);
+                spawn(230797, 611.1872f, 452.91882f, 191.2776f, (byte) 39);
+                spawn(230797, 610.7328f, 518.80884f, 191.2776f, (byte) 75);
+                break;
+
+            /**
+             * Area 2: Rune Cloister And Logistic Base.
+             */
+            case 230818: //Sheban Legion Elite Gunner.
+                sendMsg(1401916);
+                doors.get(372).setOpen(true);
+                break;
+            case 230850: //Research Teselik.
+                sendMsg(1401917);
+                doors.get(375).setOpen(true);
+                break;
+
+            /**
+             * Area 3: Rune Bridge And Logistic Base Arsenal.
+             */
+            case 233255: //Gatekeeper Stranir.
+                sendMsg(1401918);
+                doors.get(378).setOpen(true);
+                break;
+            case 230852: //Commander Ranodim.
+                sendMsg(1401919);
+                doors.get(388).setOpen(true);
+                break;
+
+            /**
+             * Area 4: Chiefs Chamber.
+             */
+            case 230791: //Sheban Legion Elite Assaulter.
+                sendMsg(1401920);
+                doors.get(376).setOpen(true);
+                break;
+            case 230853: //Chief Of Staff Moriata.
+                sendMsg(1401921);
+                spawn(730872, 131.85886f, 432.22598f, 151.66972f, (byte) 57, 3);
+                break;
+
+            /**
+             * Area 5: Final Boss.
+             */
+            case 230854: //Historian Uterunerk's.
+                PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(0, 120));
+                ThreadPoolManager.getInstance().schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        instance.doOnAllPlayers(new Visitor<Player>() {
+                            @Override
+                            public void visit(Player player) {
+                                onExitInstance(player);
+                            }
+                        });
+                        onInstanceDestroy();
+                    }
+                }, 120000);
+                break;
+            case 230855: //Medical Officer Surkihan's.
+                PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(0, 120));
+                ThreadPoolManager.getInstance().schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        instance.doOnAllPlayers(new Visitor<Player>() {
+                            @Override
+                            public void visit(Player player) {
+                                onExitInstance(player);
+                            }
+                        });
+                        onInstanceDestroy();
+                    }
+                }, 120000);
+                break;
+            case 230856: //Interrogating Officer Jadaraka's.
+                PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(0, 120));
+                ThreadPoolManager.getInstance().schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        instance.doOnAllPlayers(new Visitor<Player>() {
+                            @Override
+                            public void visit(Player player) {
+                                onExitInstance(player);
+                            }
+                        });
+                        onInstanceDestroy();
+                    }
+                }, 120000);
+                break;
+            case 230857: //Guard Captain Ahuradim's.
+                PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(0, 120));
+                ThreadPoolManager.getInstance().schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        instance.doOnAllPlayers(new Visitor<Player>() {
+                            @Override
+                            public void visit(Player player) {
+                                onExitInstance(player);
+                            }
+                        });
+                        onInstanceDestroy();
+                    }
+                }, 120000);
+                break;
+            case 230858: //Brigade General Sheba's.
+                PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(0, 120));
+                ThreadPoolManager.getInstance().schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        instance.doOnAllPlayers(new Visitor<Player>() {
+                            @Override
+                            public void visit(Player player) {
+                                onExitInstance(player);
+                            }
+                        });
+                        onInstanceDestroy();
+                    }
+                }, 120000);
+                break;
+        }
+    }
+
+    @Override
+    public void onEnterZone(Player player, ZoneInstance zone) {
+        if (zone.getAreaTemplate().getZoneName() == ZoneName.get("DANUAR_OMPHANIUM_301130000")) {
+            if (!isStartTimer1) {
+                isStartTimer1 = true;
+                System.currentTimeMillis();
+                PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(0, 300));
+                final Npc PortalA = (Npc) spawn(730873, 131.85886f, 432.22598f, 151.66972f, (byte) 57);
+                ThreadPoolManager.getInstance().schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        sendMsg(1401810);
+                        PortalA.getController().delete();
+                        bossHistorianUterunerk = (Npc) spawn(230854, 109.41106f, 889.4598f, 411.5364f, (byte) 16); //Historian Uterunerk's.
+                        SkillEngine.getInstance().applyEffectDirectly(19049, bossHistorianUterunerk, bossHistorianUterunerk, 0); //Devour Soul.
+                    }
+                }, 300000);
+            }
+        } else if (zone.getAreaTemplate().getZoneName() == ZoneName.get("DANUAR_OMPHANIUM_301130000")) {
+            if (!isStartTimer2) {
+                isStartTimer2 = true;
+                System.currentTimeMillis();
+                PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(0, 301));
+                final Npc PortalB = (Npc) spawn(730874, 131.85886f, 432.22598f, 151.66972f, (byte) 57);
+                ThreadPoolManager.getInstance().schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        sendMsg(1401811);
+                        PortalB.getController().delete();
+                        bossMedicalOfficerSurkihan = (Npc) spawn(230855, 307.3539f, 890.088f, 411.53665f, (byte) 74); //Medical Officer Surkihan's.
+                        SkillEngine.getInstance().applyEffectDirectly(19049, bossMedicalOfficerSurkihan, bossMedicalOfficerSurkihan, 0); //Devour Soul.
+                    }
+                }, 300000);
+            }
+        } else if (zone.getAreaTemplate().getZoneName() == ZoneName.get("DANUAR_OMPHANIUM_301130000")) {
+            if (!isStartTimer3) {
+                isStartTimer3 = true;
+                System.currentTimeMillis();
+                PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(0, 302));
+                final Npc PortalC = (Npc) spawn(730875, 131.85886f, 432.22598f, 151.66972f, (byte) 57);
+                ThreadPoolManager.getInstance().schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        sendMsg(1401812);
+                        PortalC.getController().delete();
+                        bossInterrogatingOfficerJadaraka = (Npc) spawn(230856, 503.9067f, 889.868f, 411.53705f, (byte) 60); //Interrogating Officer Jadaraka's.
+                        SkillEngine.getInstance().applyEffectDirectly(19049, bossInterrogatingOfficerJadaraka, bossInterrogatingOfficerJadaraka, 0); //Devour Soul.
+                    }
+                }, 300000);
+            }
+        } else if (zone.getAreaTemplate().getZoneName() == ZoneName.get("DANUAR_OMPHANIUM_301130000")) {
+            if (!isStartTimer4) {
+                isStartTimer4 = true;
+                System.currentTimeMillis();
+                PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(0, 303));
+                final Npc PortalD = (Npc) spawn(730876, 131.85886f, 432.22598f, 151.66972f, (byte) 57);
+                ThreadPoolManager.getInstance().schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        sendMsg(1401813);
+                        PortalD.getController().delete();
+                        bossGuardCaptainAhuradim = (Npc) spawn(230857, 703.3685f, 889.8764f, 411.537f, (byte) 60); //Guard Captain Ahuradim's.
+                        SkillEngine.getInstance().applyEffectDirectly(19049, bossGuardCaptainAhuradim, bossGuardCaptainAhuradim, 0); //Devour Soul.
+                    }
+                }, 300000);
+            }
+        } else if (zone.getAreaTemplate().getZoneName() == ZoneName.get("DANUAR_OMPHANIUM_301130000")) {
+            if (!isStartTimer5) {
+                isStartTimer5 = true;
+                System.currentTimeMillis();
+                PacketSendUtility.sendPacket(player, new SM_QUEST_ACTION(0, 304));
+                final Npc PortalE = (Npc) spawn(730877, 131.85886f, 432.22598f, 151.66972f, (byte) 57);
+                ThreadPoolManager.getInstance().schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        sendMsg(1401814);
+                        PortalE.getController().delete();
+                        bossBrigadeGeneralSheba = (Npc) spawn(230858, 899.7731f, 889.8521f, 411.5367f, (byte) 75); //Brigade General Sheba's.
+                        SkillEngine.getInstance().applyEffectDirectly(19049, bossBrigadeGeneralSheba, bossBrigadeGeneralSheba, 0); //Devour Soul.
+                    }
+                }, 300000);
+            }
+        }
+    }
+
+    @Override
+    public void onExitInstance(Player player) {
+        TeleportService2.moveToInstanceExit(player, mapId, player.getRace());
+    }
+
+    @Override
+    public boolean onDie(final Player player, Creature lastAttacker) {
+        PacketSendUtility.broadcastPacket(player, new SM_EMOTION(player, EmotionType.DIE, 0, player.equals(lastAttacker) ? 0 : lastAttacker.getObjectId()), true);
+        PacketSendUtility.sendPacket(player, new SM_DIE(player.haveSelfRezEffect(), player.haveSelfRezItem(), 0, 8));
+        return true;
+    }
+
+    @Override
+    public void onInstanceDestroy() {
+        doors.clear();
+        isInstanceDestroyed = true;
+    }
+
+    @Override
+    public void onPlayerLogOut(Player player) {
+        TeleportService2.moveToInstanceExit(player, mapId, player.getRace());
+    }
+}

@@ -1,0 +1,143 @@
+<poll>
+    <poll_introduction>
+        <![CDATA[<font color='4CB1E5'>Commands Admin</font>]]>
+    </poll_introduction>
+    <poll_title>
+        <font color='ffc519'></font>
+    </poll_title>
+    <questions>
+        <question>
+            <title>
+                <![CDATA[
+				<br><br><center><font color='F0FFFF'>Color Codes for each Level:</font></center><br><br>
+				<font color='FFD700'>:TrialGM:</font><br>
+				<font color='0000FF'>:GM:</font><br>
+				<font color='00FF00'>:HeadGM:</font><br>
+				<font color='FF0000'>:Dev:</font><br>
+				
+                <font color='FFD700'>//add [Optional : Charactername] [ItemID] [Quantity]</font><br>
+				<font color='00FF00'>//adddrop [MobID] [ItemID] [Min] [Max] [Chance]</font><br>
+				<font color='FFD700'>//addset [SetID]</font><br>
+				<font color='0000FF'>//addskill [SkillID] [SkillLevel]</font><br>
+				<font color='FFD700'>//addtitle [TitleID] [PlayerName]</font><br>
+				<font color='0000FF'>//addexp [Exp]</font><br>
+				<font color='FFD700'>//addtitle [Id] [PlayerName]</font><br>
+				<font color='FFD700'>//kinah [Player] [Quantity]</font><br>
+				<font color='FFD700'>//remove [Player] [ItemID] [Quantity]</font><br>
+				<font color='0000FF'>//notice [Message]</font><br>
+				<font color='FFD700'>//announcefaction [Ely | Asmo] [Message]</font><br>
+				<font color='FFD700'>//announce [Anonymous | Name] [Message]</font><br>
+				<font color='00FF00'>//announcements [list]</font><br>
+				<font color='00FF00'>//announcements add [faction: ELYOS | ASMODIANS | ALL] [type: SYSTEM | WHITE | ORANGE | SHOUT | YELLOW] [delay in seconds] [message]</font><br>
+				<font color='00FF00'>//announcements delete [Id]</font><br>
+				<font color='00FF00'>//attrbonus [modifier] [value]</font><br>
+				<font color='00FF00'>//wc [Ely | Asm | All | Default] [Message]</font><br>
+				<font color='00FF00'>//ban [Player] [Account | Ip | Full] [Time in Minutes]</font><br>
+				<font color='00FF00'>//unban [Player] [Account | Ip | Full]</font><br>
+				<font color='00FF00'>//banchar [Player] [Days | 0] [Reason]</font><br>
+				<font color='00FF00'>//unbanchar [Player]</font><br>
+				<font color='00FF00'>//banip [Ip] [Time in Minutes]</font><br>
+				<font color='00FF00'>//unbanip [Ip]</font><br>
+				<font color='00FF00'>//banmac [Mac] [Time in Minutes]</font><br>
+				<font color='00FF00'>//unbanmac [Mac]</font><br>
+				<font color='0000FF'>//gag [Player] [Time in Minutes]</font><br>
+				<font color='0000FF'>//ungag [Player]</font><br>
+				<font color='00FF00'>//kick [Player]</font><br>
+				<font color='0000FF'>//sprison [Player] [Time in Minutes] [Reason]</font><br>
+				<font color='0000FF'>//rprison [Player]</font><br>
+				<font color='0000FF'>//appearance [Size | Voice | Hair | Face | Deco | Head size | Tattoo | Reset (to reset the appearance)] [Value]</font><br>
+				<font color='0000FF'>//bk [Add | Del | Tele | List]</font><br>
+				<font color='00FF00'>//clear [Groups | Allys | Findgroup]</font><br>
+				<font color='00FF00'>//status [Alliance | Group]</font><br>
+				<font color='00FF00'>//cooldown</font><br>
+				<font color='FF0000'>//delskill [Player] [All | SkillId]</font><br>
+				<font color='0000FF'>//dispel</font><br>
+				<font color='0000FF'>//dye [Dye color | Hex color | No]</font><br>
+				<font color='FFD700'>//enemy [Players | Npcs | All | Cancel]</font><br>
+				<font color='FFD700'>//neutral [Players | Npcs | All | Cancel]</font><br>
+				<font color='FF0000'>//equip help [Socket | Enchant | Godstone]</font><br>
+				<font color='0000FF'>//gameshop</font><br>
+				<font color='FFD700'>//gmlist</font><br>
+				<font color='FFD700'>//goto [Location]</font><br>
+				<font color='FFD700'>//gm</font><br>
+				<font color='0000FF'>//grouptome [Player]</font><br>
+				<font color='FFD700'>//heal [Dp]</font><br>
+				<font color='FFD700'>//invis</font><br>
+				<font color='FFD700'>//invul</font><br>
+				<font color='0000FF'>//kill [Target | All | [Range]]</font><br>
+				<font color='00FF00'>//legion</font><br>
+				<font color='0000FF'>//marry [Player 1] [Player 2]</font><br>
+				<font color='0000FF'>//morph [NPC Id | Cancel]</font><br>
+				<font color='0000FF'>//movie [Type] [Id]</font><br>
+				<font color='FFD700'>//online</font><br>
+				<font color='00FF00'>//passkeyreset [Player] [Passkey]</font><br>
+				<font color='00FF00'>//pet [Add [Pet Id] [Pet Name]</font><br>
+				<font color='00FF00'>//petition</font><br>
+				<font color='FFD700'>//playerinfo [Player] [Loc | Item | Group | Skill | Legion]</font><br>
+				<font color='0000FF'>//rename [Player] [New Name]</font><br>
+				<font color='FFD700'>//res [Target]</font><br>
+				<font color='FF0000'>//sysmail</font><br>
+				<font color='00FF00'>//teleportation</font><br>
+				<font color='FFD700'>//time [Dawn | Day | Dusk | Night | Desired hour (number)]</font><br>
+				<font color='0000FF'>//whisper [on for wispable | off for unwispable]</font><br>
+				<font color='FFD700'>//moveplayertoplayer [Character Name To Move] [Character Name Destination]</font><br>
+				<font color='FFD700'>//moveto [World Id] [X] [Y] [Z]</font><br>
+				<font color='FFD700'>//movetome [Player]</font><br>
+				<font color='0000FF'>//movetomeall [All | Elyos | Asmos]</font><br>
+				<font color='FFD700'>//movetonpc [Npc Id]</font><br>
+				<font color='FFD700'>//movetoplayer [Player]</font><br>
+				<font color='FFD700'>//moveplayerto [Player]</font><br>
+				<font color='00FF00'>//spawn [Npc Id] [Respawn Time]</font><br>
+				<font color='00FF00'>//delete [Target]</font><br>
+				<font color='FFD700'>//info [Target]</font><br>
+				<font color='0000FF'>//dropinfo [Target]</font><br>
+				<font color='FFD700'>//removecd [Target]</font><br>
+				<font color='0000FF'>//npcskill [Target]</font><br>
+				<font color='FF0000'>//reload [Quest | Skill | Portal | Spawn | Commands | Drop | Gameshop]</font><br>
+				<font color='00FF00'>//raw [Name]</font><br>
+				<font color='00FF00'>//ranking [update]</font><br>
+				<font color='FFD700'>//skills</font><br>
+				<font color='00FF00'>//motion [HELP|analyze|savetosql|advanced|as]</font><br>
+				<font color='FF0000'>//promote [characterName] [accesslevel | membership] [mask]</font><br>
+				<font color='FF0000'>//revoke [characterName] [acceslevel | membership]</font><br>
+				<font color='FF0000'>//configure [set|show] [configname] [property] [newvalue]</font><br>
+				<font color='FFD700'>//channel [On | Off]</font><br>
+				<font color='0000FF'>//emanager [start] [pvp | 2x2 | 3x3 | 4x4 | 5x5 | 6x6 | lhe | ffa]</font><br>
+				<font color='0000FF'>//check </font><br>
+				<font color='0000FF'>//switchchannel [number]</font><br>
+				<font color='0000FF'>//recharger [on | off]</font><br>
+				<font color='0000FF'>//warp [location]</font><br>
+				<font color='0000FF'>//eventcaller [show | start | stop]</font><br>
+				<font color='0000FF'>//outlaw [neutral | attackable | clear] [all | 0]</font><br>
+				<font color='0000FF'>//eventai [type //eventai to see info]</font><br>
+				<font color='0000FF'>//misc [coming soon]</font><br>
+				<font color='0000FF'>//showtoll</font><br>
+				<font color='FF0000'>//sys</font><br>
+				<font color='00FF00'>//pvp</font><br>
+				<font color='00FF00'>//reload_spawn</font><br>
+				<font color='00FF00'>//repair</font><br>
+				<font color='00FF00'>//ring</font><br>
+				<font color='00FF00'>//rift</font><br>
+				<font color='FFD700'>//see</font><br>
+				<font color='00FF00'>//send</font><br>
+				<font color='00FF00'>//setrace</font><br>
+				<font color='00FF00'>//siege</font><br>
+				<font color='00FF00'>//spawnu</font><br>
+				<font color='FFD700'>//startevent</font><br>
+				<font color='0000FF'>//set</font><br>
+				<font color='0000FF'>//stat</font><br>
+				<font color='0000FF'>//state</font><br>
+				<font color='00FF00'>//transfo</font><br>
+				<font color='00FF00'>//stoken</font><br>
+				<font color='00FF00'>//transfo</font><br>
+				<font color='0000FF'>//who</font><br>
+				<font color='FF0000'>//tvt2</font><br>
+				<font color='FF0000'>//ai2</font><br>
+				]]>
+			</title>
+				<select>
+					<input type='radio'>Close the window</input>
+				</select>
+		</question>
+	</questions>
+</poll>
